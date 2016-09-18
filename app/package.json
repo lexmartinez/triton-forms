@@ -1,0 +1,6 @@
+{
+  "name": "triton-forms",
+  "version": "0.0.1",
+  "description": "Dynamic Forms Engine, built on Electron",
+  "main": "main.js"
+}

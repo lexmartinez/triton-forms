@@ -2,11 +2,15 @@
   "name": "triton-forms",
   "version": "0.0.1",
   "description": "Dynamic Forms Engine, built on Electron",
-  "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "npm install && electron app"
   },
   "devDependencies": {
     "electron": "^1.3.4"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "mongoose": "^4.5.8"
   }
 }

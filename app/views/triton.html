@@ -1,0 +1,133 @@
+<div class="window">
+  <div class="window-content">
+    <div class="pane-group">
+      <div class="pane pane-sm sidebar">
+        <nav class="nav-group">
+          <h5 class="nav-group-title"><b>Forms</b></h5>
+          <a class="nav-group-item" ng-repeat="item in _ctrl.forms"
+          ng-class="{active: _ctrl.form.name == item.name}"
+          ng-click="_ctrl.getItem(item)">
+          <span class="icon icon-window" style="margin-top:2px;"></span> &nbsp;{{item.name}}
+        </a>
+      </nav>
+
+      <nav class="nav-group">
+        <h5 class="nav-group-title"><b>Help</b></h5>
+        <a class="nav-group-item" ng-click="_ctrl.about()" ng-class="{active: _ctrl.isAbout}">
+          <span class="icon icon-info-circled" style="margin-top:2px;"></span> &nbsp;About
+        </a>
+      </nav>
+    </div>
+
+    <div class="pane empty-pane" ng-if="!_ctrl.form && !_ctrl.isAbout"></div>
+    <div class="pane empty-pane" ng-if="_ctrl.isAbout" style="padding:100px;">
+      <img src="assets/img/electron.gif" class="pull-right" style="width:100px"/>
+      <h1>triton-forms</h1>
+      <p style="margin-top:-20px">[dev-outsider-team - 2016]</p>
+      <hr/>
+      <p><h5><b>&gt; triton-forms:</b></h5>Dynamic Forms Engine, built on Electron<br/>
+        <a href="https://github.com/lexmartinez/triton-forms"
+        target="_blank">https://github.com/lexmartinez/triton-forms</a>
+      </p>
+
+      <ul class="list-group">
+        <li class="list-group-header">
+          <h5>&gt; dev-outsider-team</h5>
+        </li>
+        <li class="list-group-item">
+          <img class="img-circle media-object pull-left" src="https://avatars.githubusercontent.com/u/17863319?v=3" width="32" height="32">
+          <div class="media-body">
+            <strong>@lexmartinez</strong>
+            <p>https://github.com/lexmartinez</p>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <img class="img-circle media-object pull-left" src="https://avatars.githubusercontent.com/u/11079570?v=3" width="32" height="32">
+          <div class="media-body">
+            <strong>@exteban34</strong>
+            <p>https://github.com/exteban34</p>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <img class="img-circle media-object pull-left" src="https://avatars.githubusercontent.com/u/3493015?v=3" width="32" height="32">
+          <div class="media-body">
+            <strong>@jsrestrepom</strong>
+            <p>https://github.com/jsrestrepom</p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="pane" ng-if="_ctrl.form && !_ctrl.isAbout" class="empty-pane">
+      <header class="toolbar toolbar-header">
+        <h1 class="title"><b>{{_ctrl.form.name}}</b></h1>
+
+        <div class="toolbar-actions">
+          <div class="btn-group">
+            <button class="btn btn-large btn-default" ng-click="_ctrl.new()">
+              <span class="icon icon-newspaper icon-text"></span>&nbsp;
+              New
+            </button>
+            <button class="btn btn-large btn-default" ng-click="_ctrl.save()">
+              <span class="icon icon-floppy icon-text"></span>&nbsp;
+              Save
+            </button>
+            <button class="btn btn-large btn-default" ng-disabled="_ctrl.isNew" ng-click="_ctrl.delete()">
+              <span class="icon icon-trash icon-text"></span>&nbsp;
+              Delete
+            </button>
+          </div>
+
+          <button class="btn btn-large btn-default" ng-click="_ctrl.filter()" ng-disabled="!_ctrl.isNew">
+            <span class="icon icon-search icon-text"></span>&nbsp;
+            Search
+          </button>
+
+          <button class="btn btn-large btn-default pull-right" ng-click="_ctrl.isAbout = !_ctrl.isAbout" ng-class="{active: _ctrl.isAbout}">
+            <span class="icon icon-info-circled icon-text"></span>&nbsp;About
+          </button>
+        </div>
+      </header>
+
+      <div class="tab-group">
+        <div class="tab-item" ng-click="_ctrl.tab = 'form'" ng-class="{active: _ctrl.tab == 'form'}">
+          Form
+        </div>
+        <div class="tab-item" ng-click="_ctrl.tab = 'data'" ng-class="{active: _ctrl.tab == 'data'}">
+          Data
+        </div>
+      </div>
+
+      <table class="table-striped" ng-show="_ctrl.tab == 'data'">
+        <thead>
+          <tr>
+            <th ng-repeat="th in _ctrl.form.config">{{th.label}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="object in _ctrl.data" ng-class="{active: _ctrl.object == object}"
+          ng-click="_ctrl.getObject(object)">
+          <td ng-repeat="td in _ctrl.form.config">{{object[td.model]}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div  ng-show="_ctrl.tab == 'form'" style="padding: 30px;">
+
+      <div class="form-group" ng-repeat="input in _ctrl.form.config">
+        <label>{{input.label}}</label>
+        <input type="text" class="form-control" placeholder="{{input.label}}" ng-if="input.type=='text'" ng-model="_ctrl.object[input.model]">
+        <textarea class="form-control" rows="3" ng-if="input.type=='textarea'" ng-model="_ctrl.object[input.model]"></textarea>
+        <select class="form-control" ng-if="input.type=='select'" ng-model="_ctrl.object[input.model]">
+          <option ng-repeat="option in input.options">{{option}}</option>
+        </select>
+        <input type="checkbox" class="form-control" ng-if="input.type=='checkbox'" ng-model="_ctrl.object[input.model]"/>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+</div>

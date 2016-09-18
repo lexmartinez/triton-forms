@@ -6,12 +6,11 @@ let mainWindow
 function createWindow () {
 
   mainWindow = new BrowserWindow({width: 1024, height: 768,
-        resizable: true, moveable:true, title: "triton-forms"})
+        resizable: true, moveable:true, title: "triton-forms",
+        'accept-first-mouse': true,
+        'title-bar-style': 'hidden'})
 
-  mainWindow.loadURL(`file://${__dirname}/index.html`)
-
-  // Open the DevTools.
-  //mainWindow.webContents.openDevTools()
+  mainWindow.loadURL(`file://${__dirname}/../index.html`)
 
   mainWindow.maximize()
 
