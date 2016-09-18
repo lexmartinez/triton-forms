@@ -12,7 +12,7 @@
 
     self.data = [];
     self.object = undefined;
-    self.isNew = false;
+    self.isNew = true;
 
     self.getForms = function(){
       formsService.getForms(function (err, data) {
@@ -90,7 +90,6 @@
     };
 
     self.save = function(){
-      console.log(self.object);
       if(!self.isNew){
         formsService.updateData(self.object, self.form.target, self.form.model, function (err, data) {
           if (err){

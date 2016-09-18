@@ -26,7 +26,8 @@
           getData: getData,
           removeData: removeData,
           saveData: saveData,
-          findData: findData
+          findData: findData,
+          updateData: updateData
        };
 
        function getForms(callback){
@@ -50,12 +51,14 @@
 
        function saveData(object, collection, model, callback){
          var generalDAO = mongoose.model(collection, getSchema(collection,model));
-         return generalDAO.save(object, callback);
+         var instance = new generalDAO(object);
+         return instance.save(object, callback);
        }
 
        function updateData(object, collection, model, callback){
          var generalDAO = mongoose.model(collection, getSchema(collection,model));
-         return generalDAO.save(object, callback);
+         var instance = new generalDAO(object);
+         return instance.update(object, callback);
        }
 
        function getSchema(collection,model){

@@ -19,3 +19,33 @@ With an nodeJS + Electron Environment installed, use this commands to run `trito
 And voil&#224; `triton-forms` now should be running as desktop app
 
 ![](https://raw.githubusercontent.com/lexmartinez/triton-forms/master/assets/img/capture1.png)
+
+## Form Engine
+The `triton-forms` concept, is simple, a basic JSON document stored in MongoDB collection named `forms`, contains all configurations for the form and data that you want to save.
+
+Here is an example of form configuration:
+
+```JSON
+{
+  "name" : "Contacts",
+  "target" : "contacts",
+  "config" : [
+      {"type" : "text","label" : "Name","model" : "name"},
+      {"type" : "text","label" : "Organization","model" : "organization"},
+      {"type" : "text","label" : "Phone","model" : "phone"},
+      {"type" : "textarea","label" : "Notes","model" : "notes"},
+      {"type" : "select","label" : "Group","model" : "group",
+          "options" : ["Family",   "Work", "Friends"]
+      },
+      {"type" : "checkbox","label" : "Favorite","model" : "favorite"}
+    ],
+  "model" : "{ \"name\": \"String\", \"organization\" : \"String\", \"phone\" : \"String\", \"group\" : \"String\", \"favorite\" : \"Boolean\"}"
+}
+```
+
+Where..
+
+> name is the name and title for your form
+> target is collections name when data will be stored
+> model is mongoose schema definitions for the object
+> config is an array of every input on form (all possible input types can be found there)
