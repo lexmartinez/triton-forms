@@ -1,5 +1,5 @@
 # triton-forms
-Dynamic Forms Engine, built on Electron
+Dynamic Forms Engine (and Data Storing), built on Electron
 
 #####Project Keywords: `Electron` `AngularJS` `MongoDB` `Photon` `mongoose`
 
