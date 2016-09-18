@@ -45,10 +45,10 @@ Here is an example of form configuration:
 
 Where..
 
-⋅⋅* `name` is the name and title for your form
-⋅⋅* `target` is collections name when data will be stored
-⋅⋅* `model` is mongoose schema definitions for the object
-⋅⋅* `config` is an array of every input on form (all possible input types can be found there)
+* `name` is the name and title for your form.
+* `target` is collections name when data will be stored.
+* `model` is mongoose schema definitions for the object.
+* `config` is an array of every input on form (all possible input types can be found there).
 
 ## Useful links
 + Mongoose - Object modeling API : [http://mongoosejs.com/docs/guide.html](http://mongoosejs.com/docs/guide.html)
