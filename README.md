@@ -9,7 +9,7 @@ Dynamic Forms Engine (and Data Storing), built on Electron
 
 > For OSX Users, we suggest install nodeJS through Homebrew
 
-With a nodeJS + Electron Environment installed, use this commands to run `triton-forms`
+With nodeJS + Electron Environment installed, use this commands to run `triton-forms`
 
   ```bash
     git clone https://github.com/lexmartinez/triton-forms.git
