@@ -1,5 +1,5 @@
 # triton-forms
-Dynamic Forms Engine (and Data Storing), built on Electron
+:shell: Dynamic Forms Engine (and Data Storing), built on Electron
 
 ## Project Setup
 
