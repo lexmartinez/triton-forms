@@ -5,6 +5,24 @@
   "scripts": {
     "start": "npm install && electron app"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexmartinez/triton-forms.git"
+  },
+  "keywords": [
+    "javascript",
+    "electron",
+    "mongodb",
+    "angularjs",
+    "photon",
+    "mongoose",
+    "nodejs"
+  ],
+  "author": "Lex Martinez <lex0316@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/lexmartinez/triton-forms/issues"
+  },
+  "homepage": "https://github.com/lexmartinez/triton-forms#readme",
   "devDependencies": {
     "electron": "^1.3.4"
   },

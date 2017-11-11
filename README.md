@@ -1,8 +1,6 @@
 # triton-forms
 Dynamic Forms Engine (and Data Storing), built on Electron
 
-#####Project Keywords: `Electron` `AngularJS` `MongoDB` `Photon` `mongoose`
-
 ## Project Setup
 
 `triton-forms` built on [Electron](https://github.com/electron/electron) is a typical `nodeJS` application we assumed that you're familiarized with this technologies, otherwise there are useful link [nodeJS](https://nodejs.org/en/)
@@ -14,6 +12,7 @@ With nodeJS + Electron Environment installed, use this commands to run `triton-f
   ```bash
     git clone https://github.com/lexmartinez/triton-forms.git
     cd triton-forms
+    npm install
     npm start
   ```
 And voil&#224; `triton-forms` now should be running as desktop app
