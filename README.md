@@ -12,7 +12,6 @@ With nodeJS + Electron Environment installed, use this commands to run `triton-f
   ```bash
     git clone https://github.com/lexmartinez/triton-forms.git
     cd triton-forms
-    npm install
     npm start
   ```
 And voil&#224; `triton-forms` now should be running as desktop app
